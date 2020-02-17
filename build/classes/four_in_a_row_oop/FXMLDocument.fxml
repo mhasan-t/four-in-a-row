@@ -6,12 +6,14 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="806.0" prefWidth="838.0" style="-fx-background-color: #000000; -fx-border-color: #a8a69e;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="four_in_a_row_oop.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="865.0" prefWidth="838.0" style="-fx-background-color: #000000; -fx-border-color: #a8a69e;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="four_in_a_row_oop.FXMLDocumentController">
     <children>
-      <GridPane fx:id="gridBoard" layoutX="140.0" layoutY="68.0" prefHeight="498.0" prefWidth="561.0" AnchorPane.bottomAnchor="242.0" AnchorPane.leftAnchor="140.0" AnchorPane.rightAnchor="139.0" AnchorPane.topAnchor="68.0">
+      <GridPane fx:id="gridBoard" layoutX="142.0" layoutY="70.0" prefHeight="493.0" prefWidth="557.0" AnchorPane.bottomAnchor="303.0" AnchorPane.leftAnchor="141.0" AnchorPane.rightAnchor="140.0" AnchorPane.topAnchor="69.0">
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -88,11 +90,24 @@
          </font>
       </Label>
       <Circle fx:id="turnIndicator" layoutX="272.0" layoutY="677.0" radius="42.0" stroke="BLACK" strokeType="INSIDE" />
-      <Label fx:id="turnIndicatorText" layoutX="141.0" layoutY="665.0" prefHeight="54.0" prefWidth="78.0" style="-fx-text-fill: #000000;" textFill="#00fff2" textOverrun="CLIP">
+      <Label fx:id="turnIndicatorText" layoutX="141.0" layoutY="665.0" prefHeight="54.0" prefWidth="78.0" textFill="#00fff2" textOverrun="CLIP">
          <font>
             <Font name="PT Sans Bold" size="20.0" />
          </font>
       </Label>
       <Label layoutX="141.0" layoutY="654.0" prefHeight="21.0" prefWidth="78.0" text="Turn for" textFill="#a2a2a2" />
+      <Button fx:id="restartBtn" layoutX="551.0" layoutY="663.0" mnemonicParsing="false" onAction="#restartGame" prefHeight="47.0" prefWidth="147.0" style="-fx-background-color: #000000; -fx-border-color: #ffffff;" text="Restart">
+         <font>
+            <Font name="Britannic Bold" size="20.0" />
+         </font>
+         <textFill>
+            <RadialGradient centerX="0.7355556064181857" centerY="0.5687023337560756" radius="0.5">
+               <stops>
+                  <Stop color="#da7171" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </textFill>
+      </Button>
     </children>
 </AnchorPane>

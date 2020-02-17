@@ -83,6 +83,15 @@ public class PlayingGrid {
         }
     }
     
+    void restartGame(){
+        for(int r =0; r<7; r++){
+            for(int c =0; c<7; c++){
+                grid[r][c] = 0;
+            }
+        }
+        printGrid();
+    }
+    
 //    public static void main(String[] args) {
 //        
 //        for( int[] d1: grid){

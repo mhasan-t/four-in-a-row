@@ -34,7 +34,8 @@ public class FXMLDocumentController implements Initializable {
                                 c20, c21, c22, c23, c24, c25, c26,
                                 c30, c31, c32, c33, c34, c35, c36,
                                 c40, c41, c42, c43, c44, c45, c46,
-                                c60, c61, c62, c63, c64, c65, c66;
+                                c60, c61, c62, c63, c64, c65, c66,
+                                restartBtn;
    
     
     @FXML
@@ -70,6 +71,18 @@ public class FXMLDocumentController implements Initializable {
     }
     
     
+    @FXML
+    void restartGame(ActionEvent event) {
+            playingGrid.restartGame();
+            for(int r =0; r<7; r++){
+                for(int c =0; c<7; c++){
+                    Button btnTemp = (Button) ((Control)event.getSource()).getScene().lookup("#c"+r+c);
+                    btnTemp.setStyle("-fx-background-radius: 100; -fx-background-color:  #aaaaaa");
+                }
+            }
+    }
+    
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
@@ -86,6 +99,8 @@ public class FXMLDocumentController implements Initializable {
     }    
     
     
+    
+    
     void changeIndicator(){
         if( turnIndicator.getStyle() == "-fx-fill: #ff0000" ){
             turnIndicatorText.setStyle("-fx-text-fill: #0dff00");
@@ -98,5 +113,7 @@ public class FXMLDocumentController implements Initializable {
             turnIndicator.setStyle("-fx-fill: #ff0000");
         }
     }
+    
+   
     
 }

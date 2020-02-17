@@ -109,5 +109,11 @@
             </RadialGradient>
          </textFill>
       </Button>
+      <Label layoutX="657.0" layoutY="832.0" prefHeight="18.0" prefWidth="166.0" text="Muhib Al Hasan - 011 191 083" textFill="#878484" />
+      <Label fx:id="winMsg" layoutX="141.0" layoutY="711.0" prefHeight="119.0" prefWidth="555.0" textFill="RED">
+         <font>
+            <Font name="Bauhaus 93" size="51.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>

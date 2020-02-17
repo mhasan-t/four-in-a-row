@@ -36,10 +36,9 @@ public class PlayingGrid {
         if( emptyHole != -1 ){
             grid[emptyHole][col] = this.currentPlayer;
             this.changePlayer();
-            this.printGrid();
+//            this.checkForWin(emptyHole, col);
+//            this.printGrid();
         }
-        
-        
     }
     
     
@@ -92,14 +91,104 @@ public class PlayingGrid {
         printGrid();
     }
     
-//    public static void main(String[] args) {
-//        
-//        for( int[] d1: grid){
-//            for( int v : d1 ){
-//                System.out.print(v+" ");
-//            }
-//            System.out.println(" ");
-//        }
-//    }
+    
+    int checkForWin(int row, int col){
+//        System.out.println("CHECKING FOR "+row+"  "+col);
+        
+        //checking for vertical match ------------------
+        int vCount = 1;
+        for (int x=1; x<4 ; x++){
+            if( (x+row) <= 6  ){
+                if(grid[row][col] == grid[row+x][col] ){
+                    vCount++;
+//                    System.out.println("COUNTIN row "+row+" col "+col+ " x "+ x);
+                }
+                else{
+                    break;
+                }
+            }
+        }
+        
+        
+        //checking for horizontal match -----------------
+        int hCount = 1;
+        //left side
+        for ( int x = 1; x < 4 ; x++){
+            if( x + col <=6 ){
+                if ( grid[row][col] == grid[row][col+x] ){
+                    hCount++;
+                }
+            }
+            
+            //right side
+            if( col-x >= 0 ){
+                if ( grid[row][col] == grid[row][col-x] ){
+                    hCount++;
+                }
+            }
+        }
+        
+        
+        //checking for left-right diagnoal match --------------
+        int lrDiagonalCount = 1;
+        
+        for( int x = 1; x < 4; x ++ ){
+            //to right-bottom
+            if( x+col <=6 && x+row <= 6 ){
+                if( grid[row][col]  ==  grid[row+x][col+x] ){
+                    lrDiagonalCount++;
+                }
+            }
+            
+            //to left-top
+            if ( col-x >=0 && row -x >=0 ){
+                if( grid[row][col] ==  grid[row-x][col-x] ){
+                    lrDiagonalCount++;
+                }
+            }
+            
+        }
+        
+        
+        
+         //checking for right-left diagnoal match --------------
+        int rlDiagonalCount = 1;
+        
+        for( int x = 1; x < 4; x ++ ){
+            //count toward right top
+            if( x+col <=6 && row-x >= 0 ){
+                if( grid[row][col]  ==  grid[row-x][col+x] ){
+                    rlDiagonalCount++;
+                    int z = row-x;
+                    int y = col+x;
+//                    System.out.println("match "+row+" "+col+"  with "+z+" "+y);
+                }
+            }
+            
+            //towards left-bottom
+            if( x+row <=6 && col-x >= 0 ){
+                if( grid[row][col]  ==  grid[row+x][col-x] ){
+                    rlDiagonalCount++;
+                }
+            }
+            
+        }
+        
+//        System.out.println("hcount "+ hCount+ "  v "+vCount+"  rl d "+ rlDiagonalCount+ "  lrd  "+lrDiagonalCount);
+        
+        if ( hCount>=4 || vCount>=4 || lrDiagonalCount>=4 || rlDiagonalCount>=4 ){
+            if( currentPlayer == 1 ){
+                System.out.println("WINNER 2");
+                return 2;
+            }
+            else{
+                System.out.println("WINNER 1");
+                return 1;
+            }
+        }
+        return -1;
+    }
+    
+
     
 }

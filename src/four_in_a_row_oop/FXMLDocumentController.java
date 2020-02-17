@@ -41,12 +41,12 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private Circle turnIndicator;
     @FXML
-    private Label turnIndicatorText;
+    private Label turnIndicatorText, winMsg;
     
     
     @FXML
     private void handleButtonAction(ActionEvent event) {
-        System.out.println("YOU CLICKED "+ ((Control)event.getSource()).getId()   );
+//        System.out.println("YOU CLICKED "+ ((Control)event.getSource()).getId()   );
         String id = ((Control)event.getSource()).getId();
         int row = Character.getNumericValue(id.toCharArray()[1]);
         int column = Character.getNumericValue(id.toCharArray()[2]);
@@ -64,9 +64,15 @@ public class FXMLDocumentController implements Initializable {
             }
             changeIndicator();
         }
-        
+        int emptyH = playingGrid.getEmptyHole(column);
         playingGrid.onPlay(column);
-        
+        int winner = playingGrid.checkForWin(emptyH, column);
+        if( winner == 1 ){
+            winMsg.setText("WINNER IS PLAYER ONE");
+        }
+        if (winner == 2){
+            winMsg.setText("WINNER IS PLAYER TWO");
+        }
         
     }
     

@@ -24,6 +24,9 @@ import javafx.scene.shape.Circle;
 public class FXMLDocumentController implements Initializable {
 
     final PlayingGrid playingGrid = new PlayingGrid();
+    String playerOneName = "One";
+    String playerTwoName = "Two";
+    
     
     @FXML
     private GridPane gridBoard;
@@ -72,12 +75,12 @@ public class FXMLDocumentController implements Initializable {
             if( winner == 1 ){
                 disableButtons();
                 winMsg.setStyle("-fx-text-fill: #ff0000");
-                winMsg.setText("WINNER IS PLAYER ONE");
+                winMsg.setText("WINNER IS PLAYER "+playerOneName);
             }
             if (winner == 2){
                 disableButtons();
                 winMsg.setStyle("-fx-text-fill: #0dff00");
-                winMsg.setText("WINNER IS PLAYER TWO");
+                winMsg.setText("WINNER IS PLAYER "+playerTwoName);
             }
         }
         
@@ -120,11 +123,11 @@ public class FXMLDocumentController implements Initializable {
     void changeIndicator(){
         if( turnIndicator.getStyle() == "-fx-fill: #ff0000" ){
             turnIndicatorText.setStyle("-fx-text-fill: #0dff00");
-            turnIndicatorText.setText("Two");
+            turnIndicatorText.setText(playerTwoName);
             turnIndicator.setStyle("-fx-fill: #0dff00");
         }
         else{
-            turnIndicatorText.setText("One");
+            turnIndicatorText.setText(playerOneName);
             turnIndicatorText.setStyle("-fx-text-fill: #ff0000");
             turnIndicator.setStyle("-fx-fill: #ff0000");
         }

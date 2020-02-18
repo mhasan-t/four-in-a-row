@@ -11,7 +11,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="865.0" prefWidth="838.0" style="-fx-background-color: #000000; -fx-border-color: #a8a69e;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="four_in_a_row_oop.FXMLDocumentController">
+<AnchorPane id="AnchorPane" minHeight="865.0" minWidth="838.0" prefHeight="865.0" prefWidth="838.0" style="-fx-background-color: #000000; -fx-border-color: #a8a69e;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="four_in_a_row_oop.FXMLDocumentController">
     <children>
       <GridPane fx:id="gridBoard" layoutX="142.0" layoutY="70.0" prefHeight="493.0" prefWidth="557.0" AnchorPane.bottomAnchor="303.0" AnchorPane.leftAnchor="141.0" AnchorPane.rightAnchor="140.0" AnchorPane.topAnchor="69.0">
         <columnConstraints>

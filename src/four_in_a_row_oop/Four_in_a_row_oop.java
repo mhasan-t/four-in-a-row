@@ -19,7 +19,8 @@ public class Four_in_a_row_oop extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+//        Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("menuScene.fxml"));
         
         Scene scene = new Scene(root);
         

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.paint.RadialGradient?>
 <?import javafx.scene.paint.Stop?>
@@ -21,5 +23,9 @@
             </RadialGradient>
          </textFill>
       </Button>
+      <Label layoutX="336.0" layoutY="283.0" prefHeight="26.0" prefWidth="306.0" text="Enter name for Player One :" />
+      <Label layoutX="336.0" layoutY="366.0" prefHeight="26.0" prefWidth="306.0" text="Enter name for Player Two :" />
+      <TextField fx:id="playerOneNameField" layoutX="313.0" layoutY="309.0" prefHeight="38.0" prefWidth="198.0" style="-fx-background-color: #fcba03;" />
+      <TextField fx:id="playerTwoNameField" layoutX="313.0" layoutY="392.0" prefHeight="38.0" prefWidth="198.0" style="-fx-background-color: #fcba03;" />
    </children>
 </AnchorPane>

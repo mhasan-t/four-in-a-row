@@ -106,12 +106,12 @@ public class FXMLDocumentController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         if ( playingGrid.currentPlayer == 1 ){
-            turnIndicatorText.setText("One");
+            turnIndicatorText.setText(playerOneName);
             turnIndicatorText.setStyle("-fx-text-fill: #ff0000");
             turnIndicator.setStyle("-fx-fill: #ff0000");
         }
         else{
-            turnIndicatorText.setText("Two");
+            turnIndicatorText.setText(playerTwoName);
             turnIndicatorText.setStyle("-fx-text-fill: #ff0000");
             turnIndicator.setStyle("-fx-fill: #0dff00");
         }
@@ -151,5 +151,10 @@ public class FXMLDocumentController implements Initializable {
         }
     }
    
+    
+    void getNames(String oneName, String twoName){
+        this.playerOneName = oneName;
+        this.playerTwoName = twoName;
+    }
     
 }

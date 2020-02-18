@@ -16,6 +16,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 /**
  * FXML Controller class
@@ -26,15 +27,26 @@ public class MenuSceneController implements Initializable {
     @FXML
     private Button newGame;
 
+    
+     @FXML
+     private TextField playerOneNameField, playerTwoNameField;
     /**
      * Initializes the controller class.
      */
     
     public void newGameFunc(ActionEvent event) throws IOException{
-         Parent menuSceneRoot = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
-         Scene newGameScene = new Scene(menuSceneRoot);
+        FXMLLoader loader=new FXMLLoader();
+        loader.setLocation(getClass().getResource("FXMLDocument.fxml"));
+        Parent newGameParent = (Parent) loader.load();
+//         Parent menuSceneRoot = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+         
+         
+         FXMLDocumentController controller  = loader.getController();
+         controller.getNames(playerOneNameField.getText(), playerTwoNameField.getText());
+         controller.initialize(null, null);
          
          Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+         Scene newGameScene = new Scene(newGameParent);
          
          window.setScene(newGameScene);
          window.show();

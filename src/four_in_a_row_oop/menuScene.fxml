@@ -32,5 +32,7 @@
             <Font name="Bauhaus 93" size="55.0" />
          </font>
       </Label>
+      <Label layoutX="540.0" layoutY="759.0" prefHeight="38.0" prefWidth="274.0" text="Name : Muhib Al Hasan" />
+      <Label layoutX="540.0" layoutY="797.0" prefHeight="38.0" prefWidth="274.0" text="ID : 011 191 083" />
    </children>
 </AnchorPane>

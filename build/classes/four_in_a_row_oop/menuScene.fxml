@@ -27,5 +27,12 @@
       <Label layoutX="336.0" layoutY="366.0" prefHeight="26.0" prefWidth="306.0" text="Enter name for Player Two :" />
       <TextField fx:id="playerOneNameField" layoutX="313.0" layoutY="309.0" prefHeight="38.0" prefWidth="198.0" style="-fx-background-color: #fcba03;" />
       <TextField fx:id="playerTwoNameField" layoutX="313.0" layoutY="392.0" prefHeight="38.0" prefWidth="198.0" style="-fx-background-color: #fcba03;" />
+      <Label layoutX="219.0" layoutY="62.0" prefHeight="178.0" prefWidth="490.0" text="FOUR IN A ROW">
+         <font>
+            <Font name="Bauhaus 93" size="55.0" />
+         </font>
+      </Label>
+      <Label layoutX="540.0" layoutY="759.0" prefHeight="38.0" prefWidth="274.0" text="Name : Muhib Al Hasan" />
+      <Label layoutX="540.0" layoutY="797.0" prefHeight="38.0" prefWidth="274.0" text="ID : 011 191 083" />
    </children>
 </AnchorPane>

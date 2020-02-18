@@ -98,6 +98,7 @@ public class FXMLDocumentController implements Initializable {
                     btnTemp.setStyle("-fx-background-radius: 100; -fx-background-color:  #aaaaaa");
                 }
             }
+            winMsg.setText("");
             enableButtons();
     }
     
